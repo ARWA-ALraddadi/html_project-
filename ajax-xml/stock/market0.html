@@ -1,0 +1,198 @@
+<html>
+<head>
+<title>Ajax example</title>
+
+<script>
+
+function makeAjaxQueryMarket(){
+
+  // create an XMLHttpRequest
+  var xhttp = new XMLHttpRequest();
+
+  // create a handler for the readyState change
+  xhttp.onreadystatechange = function() {
+
+    readyStateChangeHandler(xhttp);
+    
+  };
+
+  // get XML file by making async call
+  xhttp.open("GET", "market.xml", true);
+  xhttp.send();
+}
+
+// handler for the readyState change
+function readyStateChangeHandler(xhttp){
+
+  if (xhttp.readyState == 4){
+    // readyState = 4 means DONE
+
+    if(xhttp.status == 200){
+      // status = 200 means OK
+
+      handleStatusSuccess(xhttp);
+
+    }else{
+      // status is NOT OK
+
+      handleStatusFailure(xhttp);
+
+    }
+  }
+
+}
+
+// XMLHttpRequest failed
+function handleStatusFailure(xhttp){
+
+  // display error message
+
+  var displayDiv = document.getElementById("display");
+
+  displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;
+}
+
+// XMLHttpRequest success
+function handleStatusSuccess(xhttp){
+
+  var xml = xhttp.responseXML;
+
+  // parse the XML into an object
+  var marketObj = parseXMLMarket(xml);
+
+  // display the object on the page
+  displayMarket(marketObj);
+}
+
+// parse the XML into an object
+function parseXMLMarket(xml){
+
+  // print XML on the console
+  // console.log(xml);
+
+  //create an object to hold the information in the xml file
+  var marketObj = {};
+
+  // get the market XML element
+  var marketElement = xml.getElementsByTagName("market")[0];
+
+  // get the queryTime
+  marketObj.queryTime = marketElement.getAttribute("queryTime");
+
+  // get the array of stock XML elements
+  var stockElementList = marketElement.getElementsByTagName("stock");
+
+  // parse the array of stock XML elements into an array of stock objects
+  marketObj.stockList = parseStockElementList(stockElementList);
+
+  return marketObj;
+}
+
+// parsing an array of stock elements to form an array of stock objects
+function parseStockElementList(stockElementList){
+
+  // create an array to hold stock objects
+  var stockList = [];
+
+  for(var i=0; i < stockElementList.length; i++){
+
+    // go through each stock XML element 
+    var stockElement = stockElementList[i];
+
+    // parse the stock XML element into an object
+    var stockObj = parseStockElement(stockElement);
+
+    // add the stock object into the stockList array
+    stockList.push(stockObj);
+  }
+
+  return stockList;
+}  
+
+
+// parse a stock XML element into a JavaScript stock object
+function parseStockElement(stockElement){
+
+  //create an stock object
+  var stockObj = {};
+
+  // get name XML element
+  var nameElement = stockElement.getElementsByTagName("name")[0];
+
+  // get the stock name
+  stockObj.name = nameElement.textContent;
+
+  // get the stock value XML element
+  var valueElement = stockElement.getElementsByTagName("value")[0];
+
+  // get the stock value as a number
+  stockObj.value = Number(valueElement.textContent);
+
+  // get the stock change XML element
+  var changeElement = stockElement.getElementsByTagName("change")[0];
+
+  // get the stock change as a number
+  stockObj.change = Number(changeElement.textContent);
+
+  // get the net percentage XML element
+  var netpctElement = stockElement.getElementsByTagName("netpct")[0];
+
+  // get the net percentage as a number
+  stockObj.netpct = Number(netpctElement.textContent);
+
+  return stockObj;
+}
+
+
+// display the market object on the page
+function displayMarket(marketObj){
+  // print the marketObj on the console
+  // console.log(marketObj);
+
+  // construct HTML code to display market information
+  var html = "";
+
+  html += "queryTime: " + marketObj.queryTime; 
+  html += "<br /><br />";
+
+  for(var i=0; i < marketObj.stockList.length; i++){
+    var stockObj = marketObj.stockList[i];
+
+    html += "name: " + stockObj.name;
+    html += "<br />";
+
+    html += "value: " + stockObj.value;
+    html += "<br />";
+
+    html += "change: " + stockObj.change;
+    html += "<br />";
+
+    html += "netpct: " + stockObj.netpct;
+    html += "<br /><br />";
+  }
+
+
+  // show the constructed HTML code in the display div
+  var displayDiv = document.getElementById("display");
+  displayDiv.innerHTML = html;
+}
+
+
+</script>
+
+</head>
+<body>
+
+<h1>Ajax Example: Stock Market (v0)</h1>
+
+<button onClick="makeAjaxQueryMarket()">
+Click here to view Stock Market Activity
+</button>
+
+<br /><br />
+
+<div id="display">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css"/><style>
+mark { 
+  background-color: black;
+  color: white;
+}
+</style>
+
+    <script>
+
+    function makeAjaxQueryMarket(){
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        readyStateChangeHandler(xhttp);
+      }
+      xhttp.open("GET", "Question2.json", true);
+      xhttp.send();
+    }
+
+
+    function readyStateChangeHandler(xhttp){
+      if (xhttp.readyState == 4){
+        if(xhttp.status == 200){
+
+          handleStatusSuccess(xhttp);
+
+        }else{
+          handleStatusFailure(xhttp);  }}}
+
+    function handleStatusFailure(xhttp){
+
+      var displayDiv = document.getElementById("display");
+
+      displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;}
+
+
+    function handleStatusSuccess(xhttp){
+
+      var jsonText = xhttp.responseText;
+
+      var marketObj = JSON.parse(jsonText);
+
+      displayMarket(marketObj);}
+
+
+    function displayMarket(marketObj){
+      var html = "<h1> Search result </h1><p>Search keyword</p>" + marketObj.searchKeyword + "<br>" ;
+      html += "<table border='0' width = 75% text-align= left >";
+
+      for(var i=0; i < marketObj.videoList.length; i++){
+
+        var stockObj = marketObj.videoList[i];
+        html += "<tr>";
+
+        html += "<td> <a href='"+ stockObj.link  + "' target='_blank'>";
+        html += "<img width='200' src='"+stockObj.image +" '> </a> </td>";
+        html += "<td><h2 style='color:Tomato;'>"+stockObj.title + "</h2>";
+        html += stockObj.channel + "<br>"+ stockObj.view+"<br><mark> "  ;
+        html += stockObj.length +"</mark></td></tr>";
+      } ;
+
+        html += "</table>";
+      var displayDiv = document.getElementById("display");
+      displayDiv.innerHTML = html;
+    }
+  </script>
+</head>
+<body>
+  <button  onClick="makeAjaxQueryMarket()" > Get Search Result</button>
+  <br> <br>
+  <div id="display"> </div>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<groupList year="2018" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="groupList.xsd"> 
+
+  <!-- GROUP A -->
+  <group name="A">
+    <team position="1">
+      <country>Uruguay</country>
+      <code>URU</code>
+    </team>
+    <team position="2">
+      <country>Russia</country>
+      <code>RUS</code>
+    </team>
+    <team position="3">
+      <country>Saudi Arabia</country>
+      <code>KSA</code>
+    </team>
+    <team position="4">
+      <country>Egypt</country>
+      <code>EGY</code>
+    </team>
+  </group>
+
+  <!-- GROUP B -->
+  <group name="B">
+    <team position="1">
+      <country>Spain</country>
+      <code>ESP</code>
+    </team>
+    <team position="2">
+      <country>Portugal</country>
+      <code>POR</code>
+    </team>
+    <team position="3">
+      <country>Iran</country>
+      <code>IRN</code>
+    </team>
+    <team position="4">
+      <country>Morocco</country>
+      <code>MAR</code>
+    </team>
+  </group>
+
+  <!-- GROUP C -->
+  <group name="C">
+    <team position="1">
+      <country>France</country>
+      <code>FRA</code>
+    </team>
+    <team position="2">
+      <country>Denmark</country>
+      <code>DEN</code>
+    </team>
+    <team position="3">
+      <country>Peru</country>
+      <code>PER</code>
+    </team>
+    <team position="4">
+      <country>Australia</country>
+      <code>AUS</code>
+    </team>
+  </group>
+
+  <!-- GROUP D -->
+  <group name="D">
+    <team position="1">
+      <country>Croatia</country>
+      <code>CRO</code>
+    </team>
+    <team position="2">
+      <country>Argentina</country>
+      <code>ARG</code>
+    </team>
+    <team position="3">
+      <country>Nigeria</country>
+      <code>NGA</code>
+    </team>
+    <team position="4">
+      <country>Iceland</country>
+      <code>ISL</code>
+    </team>
+  </group>
+
+  <!-- GROUP E -->
+  <group name="E">
+    <team position="1">
+      <country>Brazil</country>
+      <code>BRA</code>
+    </team>
+    <team position="2">
+      <country>Switzerland</country>
+      <code>SUI</code>
+    </team>
+    <team position="3">
+      <country>Serbia</country>
+      <code>SRB</code>
+    </team>
+    <team position="4">
+      <country>Costa Rica</country>
+      <code>CRC</code>
+    </team>
+  </group>
+
+  <!-- GROUP F -->
+  <group name="F">
+    <team position="1">
+      <country>Sweden</country>
+      <code>SWE</code>
+    </team>
+    <team position="2">
+      <country>Mexico</country>
+      <code>MEX</code>
+    </team>
+    <team position="3">
+      <country>South Korea</country>
+      <code>KOR</code>
+    </team>
+    <team position="4">
+      <country>Germany</country>
+      <code>GER</code>
+    </team>
+  </group>
+
+  <!-- GROUP G -->
+  <group name="G">
+    <team position="1">
+      <country>England</country>
+      <code>ENG</code>
+    </team>
+    <team position="2">
+      <country>Belgium</country>
+      <code>BEL</code>
+    </team>
+    <team position="3">
+      <country>Tunisia</country>
+      <code>TUN</code>
+    </team>
+    <team position="4">
+      <country>Panama</country>
+      <code>PAN</code>
+    </team>
+  </group>
+
+  <!-- GROUP H -->
+  <group name="H">
+    <team position="1">
+      <country>Japan</country>
+      <code>JPN</code>
+    </team>
+    <team position="2">
+      <country>Senegal</country>
+      <code>SEN</code>
+    </team>
+    <team position="3">
+      <country>Colombia</country>
+      <code>COL</code>
+    </team>
+    <team position="4">
+      <country>Poland</country>
+      <code>POL</code>
+    </team>
+  </group>
+
+</groupList>

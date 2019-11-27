@@ -1,0 +1,71 @@
+<html>
+<head>
+  <script>
+  function getStudentObj(){
+    var studentObj = {};
+
+    studentObj.fullname = document.getElementById("fullnameInput").value;
+    studentObj.studentNumber = document.getElementById("studentNumberInput").value;
+    studentObj.jubjectcode = document.getElementById("subjectcodeInput").value;
+    studentObj.subjecttitle = document.getElementById("subjecttitleInput").value;
+
+    studentObj.plagiarism = document.getElementById("display1").value;
+    studentObj.attendance = document.getElementById("display2").value;
+
+    return studentObj;
+  }
+  function displayJson1() {
+
+      var studentObj = getStudentObj();
+      var studentJson = JSON.stringify(studentObj, null, 1);
+      document.getElementById("display3").value = studentJson;
+
+  }
+
+  </script>
+  </head>
+
+  <body>
+    <table border="0">
+      <tr>
+        <td align="right">Enter Full name</td>
+        <td align="left"><input id="fullnameInput" type="text" size="65" value="John Smith" /></td>
+      </tr>
+
+      <tr>
+        <td align="right">Enter Student number</td>
+        <td align="left"><input id="studentNumberInput" type="text" size="65" value="1234567" /></td>
+      </tr>
+
+      <tr>
+        <td align="right">Enter subject code </td>
+        <td align="left"><input id="subjectcodeInput" type="text"  size="65" value="CSIT128" /></td>
+      </tr>
+
+      <tr>
+        <td align="right">Enter subject title </td>
+        <td align="left"><input id="subjecttitleInput" type="text" size="65" value="introduction to web Technology" /></td>
+      </tr>
+
+      <tr>
+      <td align="right">Enter plagiarism declarations </td>
+      <td align="left"> <textarea id="display1" rows="3" cols="60" width = 446px height= 54px >I have read the policy for plagiarism at Wollongong University. I declare that this assignment solution is entirely my work.
+      </textarea> </td>
+      </tr>
+
+      <tr>
+      <td align="right">Enter attendance declaration </td>
+      <td align="left"> <textarea id="display2" rows="3" cols="60" width = 446px
+        height= 54px>I acknowledge that this assignment is scheduled to be marked in the computer lab in Week 13, and absence from the labs may result in zero mark.
+       </textarea> </td>
+
+       <tr>
+       <td align="right"><button  onClick="displayJson1()" > JSON stringify </button> </td>
+       <td align="left"> <textarea id="display3" rows="10" cols="60" width = 446px
+         height= 54px>The correct JSON (with indentation) should appear in this textarea...
+        </textarea> </td>
+       </tr>
+
+       </table>
+    </body>
+    </html>

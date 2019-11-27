@@ -1,0 +1,5 @@
+<!ELEMENT studentList (student*)>
+<!ELEMENT student (firstName,lastName,email)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT email (#PCDATA)>

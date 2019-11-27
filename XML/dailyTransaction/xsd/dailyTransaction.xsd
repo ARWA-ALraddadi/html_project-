@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="dailyTransaction">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="person" minOccurs="0" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="firstName" type="xsd:string"/>
+              <xsd:element name="lastName" type="xsd:string"/>
+              <xsd:element name="mobile" type="xsd:string"/>
+            </xsd:sequence> 
+            <xsd:attribute name="staffDbId" type="xsd:integer" />
+            <xsd:attribute name="operation" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence> 
+      <xsd:attribute name="date" type="xsd:string" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

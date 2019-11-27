@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<receipt customerRef="2015ABKJ5" paymentDate="04-12-2015">
+  <item>
+    <productName>Automatic Card Shuffler</productName>
+    <quantity>1</quantity>
+    <unitPrice>19.95</unitPrice>
+  </item> 
+  <item>
+    <productName>Chuggington Fish Card Game</productName>
+    <quantity>2</quantity>
+    <unitPrice>5.50</unitPrice>
+  </item>
+</receipt>

@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>Ajax example</title>
+
+<script>
+
+function makeAjaxQueryReceipt(){
+
+  // create an XMLHttpRequest
+  var xhttp = new XMLHttpRequest();
+
+  // create a handler for the readyState change
+  xhttp.onreadystatechange = function() {
+
+    readyStateChangeHandler(xhttp);
+    
+  };
+
+  // get XML file by making async call
+  xhttp.open("GET", "receipt.xml", true);
+  xhttp.send();
+}
+
+// handler for the readyState change
+function readyStateChangeHandler(xhttp){
+
+  if (xhttp.readyState == 4){
+    // readyState = 4 means DONE
+
+    if(xhttp.status == 200){
+      // status = 200 means OK
+
+      handleStatusSuccess(xhttp);
+
+    }else{
+      // status is NOT OK
+
+      handleStatusFailure(xhttp);
+
+    }
+  }
+
+}
+
+// XMLHttpRequest failed
+function handleStatusFailure(xhttp){
+
+  // display error message
+
+  var displayDiv = document.getElementById("display");
+
+  displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;
+}
+
+// XMLHttpRequest success
+function handleStatusSuccess(xhttp){
+
+  var xml = xhttp.responseXML;
+
+  // parse the XML into an object
+  var receiptObj = parseXMLReceipt(xml);
+
+  // display the object on the page
+  displayReceipt(receiptObj);
+}
+
+// parse the XML into an object
+function parseXMLReceipt(xml){
+
+  // print XML on the console
+  // console.log(xml);
+
+  //create an object to hold the information in the xml file
+  var receiptObj = {};
+
+  // get the receipt XML element
+  var receiptElement = xml.getElementsByTagName("receipt")[0];
+
+  // get the customerRef
+  receiptObj.customerRef = receiptElement.getAttribute("customerRef");
+
+  // get the paymentDate
+  receiptObj.paymentDate = receiptElement.getAttribute("paymentDate");
+
+  // get the array of item XML elements
+  var itemElementList = receiptElement.getElementsByTagName("item");
+
+  // parse the array of item XML elements into an array of item objects
+  receiptObj.itemList = parseItemElementList(itemElementList);
+
+  return receiptObj;
+}
+
+// parsing an array of item elements to form an array of item objects
+function parseItemElementList(itemElementList){
+
+  // create an array to hold item objects
+  var itemList = [];
+
+  for(var i=0; i < itemElementList.length; i++){
+
+    // go through each item XML element 
+    var itemElement = itemElementList[i];
+
+    // parse the item XML element into an object
+    var itemObj = parseItemElement(itemElement);
+
+    // add the item object into the itemList array
+    itemList.push(itemObj);
+  }
+
+  return itemList;
+} 
+
+
+
+// parse an item XML element into a JavaScript item object
+function parseItemElement(itemElement){
+
+  //create an item object
+  var itemObj = {};
+
+  // get productName XML element
+  var productNameElement = itemElement.getElementsByTagName("productName")[0];
+
+  // get the productName
+  itemObj.productName = productNameElement.textContent;
+
+  // get quantity XML element
+  var quantityElement = itemElement.getElementsByTagName("quantity")[0];
+
+  // get the quantity as a number
+  itemObj.quantity = Number(quantityElement.textContent);
+
+  // get unitPrice XML element
+  var unitPriceElement = itemElement.getElementsByTagName("unitPrice")[0];
+
+  // get the unitPrice as a number
+  itemObj.unitPrice = Number(unitPriceElement.textContent);
+
+  return itemObj;
+}
+
+
+// display the receipt object on the page
+function displayReceipt(receiptObj){
+  // print the receiptObj on the console
+  // console.log(receiptObj);
+
+  // construct HTML code to display receipt information
+  var html = "";
+
+  html += "customerRef: " + receiptObj.customerRef;
+  html += "<br />";
+  
+  html += "paymentDate: " + receiptObj.paymentDate;
+  html += "<br /><br />";
+
+  for(var i=0; i < receiptObj.itemList.length; i++){
+    var itemObj = receiptObj.itemList[i];
+
+    html += "productName: " + itemObj.productName;
+    html += "<br />";
+
+    html += "quantity: " + itemObj.quantity;
+    html += "<br />";
+
+    html += "unitPrice: " + itemObj.unitPrice;
+    html += "<br /><br />";
+  }
+
+  // show the constructed HTML code in the display div
+  var displayDiv = document.getElementById("display");
+  displayDiv.innerHTML = html;
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>Ajax Example: Shopping Receipt (v0)</h1>
+
+<button onClick="makeAjaxQueryReceipt()">
+Click here to view receipt
+</button>
+
+<br /><br />
+
+<div id="display">
+</div>
+
+</body>
+</html>

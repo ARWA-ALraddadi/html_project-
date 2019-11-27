@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>JSON example</title>
+
+<script>
+
+function showObject(){
+ //JSON string
+ var studentJSON = '{"fullname":"John Smith","studentNumber":"U1234567","age":20,"csMajor":true}';
+  
+ //get javascript object from JSON string 
+ var studentObj = JSON.parse(studentJSON);
+  
+ //print the object to the console
+ console.log(studentObj);
+ console.log("Full name is " + studentObj.fullname);
+}
+
+</script>
+</head>
+<body>
+
+<h1>JSON: Example 2: JSON.parse</h1>
+
+<pre>
+<code>
+function showObject(){
+
+ //JSON string
+ var studentJSON = &apos;{&quot;fullname&quot;:&quot;John Smith&quot;,&quot;studentNumber&quot;:&quot;U1234567&quot;,&quot;age&quot;:20,&quot;csMajor&quot;:true}&apos;;
+  
+ //get javascript object from JSON string 
+ var studentObj = JSON.parse(studentJSON);
+  
+ //print the object to the console
+ console.log(studentObj);
+ console.log(&quot;Full name is &quot; + studentObj.fullname);
+}
+</code>
+</pre>
+
+
+
+<br /><br />
+
+
+<button onClick="showObject()">Click here to see object from JSON</button>
+
+<br /><br />
+View the console for the output.
+
+</body>
+</html>

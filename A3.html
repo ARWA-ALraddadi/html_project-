@@ -1,0 +1,149 @@
+<html>
+ <head>
+  <style>
+  h1{color:  Aqua; text-align: center;
+    border:1px solid Yellow }
+  h2 {color: blue;font-style: normal;}
+  h3{color: gray ; font-style: italic }
+  p{color: Coral ; font-family: verdana; font-style: italic;  }
+  table.task2 {border-width: thick; color:DarkCyan ;
+    width: 50%;}
+  table.task3 {border-collapse: separate ; border-width: thick ;
+    color:DarkRed; width: 80%; background-color: LightSalmon }
+  .submit {color: blue ; background-color: pink ; font-style: oblique; }
+  table.task4 {color:Indigo  ; background-color: LawnGreen  }
+  </style>
+ </head>
+<body>
+
+ <h1> Arwa Alraddadi </h1> <br/>
+ <h2>CSIT228 Introduction to Web Technology </h2> <br/>
+ <h3> Assignment 3 due on Saturday 31 August 2019 at 7:00pm </h3> <br/>
+ <h3> TUS 1:30 - 3:30 PM </h3> <br/>
+
+ <p>
+ I have read the policy for plagiarism at Wollongong University. I
+ declare that this assignment solution is entirely my work.
+ </p>
+
+ <p>
+ I acknowledge that this assignment is scheduled to be marked in the
+ computer lab in Week 6 and Week 7, and absence from the labs may result in zero mark.
+ </p>
+
+ <hr>
+
+ <form action="https://www.uow.edu.au/about/contacts/" method="get">
+   <table class="task2" border= "1" >
+     <tr>
+       <th>
+        <h3>  Find : </h3>
+       </th>
+     </tr>
+     <tr>
+       <td>
+         <input type="radio" name=" searchfield" value ="sn">  last name <br/>
+         <input type="radio" name=" searchfield" value= "givenName" > first name  <br/>
+         <input type="radio" name=" searchfield" value ="description">   Position <br/>
+         <input type="radio" name=" searchfield" value ="ou">   School/Unit <br/>
+         <input type="radio" name=" searchfield" value ="physicalDeliveryOfficeName">  Faculty/Division  <br/>
+         <input type="radio" name=" searchfield" value= "roomNumber" > Physical location  <br/>
+         <input type="radio" name=" searchfield" value= "telephoneNumber" > Telephone Number  <br/>
+       </td>
+     </tr>
+
+     <tr>
+       <td>
+         <input type="radio" name=" searchtype" value= "substring  " > contains   <br/>
+         <input type="radio" name=" searchtype" value ="exact">  eqals <br/>
+         <input type="radio" name=" searchtype" value ="begin">   Begins with <br/>
+         <input type="radio" name=" searchtype" value ="end">   Ends with <br/>
+       </td>
+     </tr>
+
+     <tr>
+       <td>
+         <input class = "submit" type="submit" value="submit" >
+         <input class = "submit" type="reset" value="Reset Form " >
+       </td>
+     </tr>
+   </table >
+  </form>
+
+ <hr>
+ <h2> Autumn Session 2019 </h2>
+ <table class="task3" border= "1">
+   <tr>
+     <th>
+       Activity
+     </th>
+     <th>
+       Date
+     </th>
+   </tr>
+
+   <tr>
+     <td>
+       First day to enrol
+     </td>
+     <td>
+       	19 Nov 2018
+     </td>
+   </tr>
+
+   <tr>
+     <td>
+       Last day to re-enrol
+     </td>
+     <td>
+       31 Jan 2019
+     </td>
+   </tr>
+
+   <tr>
+     <td>
+       International Enrolments
+     </td>
+     <td>
+       21 - 22 Feb 2019
+     </td>
+   </tr>
+
+   <tr>
+     <td>
+       Orientation
+     </td>
+     <td>
+       	26 Feb - 28 Feb 2019
+     </td>
+   </tr>
+
+   <tr>
+     <td>
+       Lectures Commence
+     </td>
+     <td>
+       (weeks 1-7) 	04 Mar - 19 Apr 2019
+     </td>
+   </tr>
+ </table>
+
+ <hr>
+
+<form action="https://solss.uow.edu.au/sid/sols_login_auth.do_login" method="get">
+  <table class="task4">
+    <tr>
+      <td>   USER NAME  </td>
+      <td>   Password  </td>
+    </tr>
+    <tr>
+    <td> <input type="text" name="p_username"> </td>
+    <td> <input  type="password"  name="p_password" > </td>
+    <td> <input  type="submit" value="Login" > </td>
+   </tr>
+  </table>
+</form>
+
+
+</body>
+</html>

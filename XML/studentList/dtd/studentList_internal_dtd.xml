@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE studentList [
+   <!ELEMENT studentList (student*)>
+   <!ELEMENT student (firstName,lastName,email)>
+   <!ELEMENT firstName (#PCDATA)>
+   <!ELEMENT lastName (#PCDATA)>
+   <!ELEMENT email (#PCDATA)>
+]>
+<studentList>
+  <student>
+    <firstName>John</firstName>
+    <lastName>Smith</lastName>
+    <email>jsmith@gmail.com</email>
+  </student>
+  <student>
+    <firstName>Mary</firstName>
+    <lastName>Jane</lastName>
+    <email>mjane@gmail.com</email>
+  </student>
+</studentList>

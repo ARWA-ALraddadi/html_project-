@@ -1,0 +1,130 @@
+<html>
+ <head>
+   <script>
+   function makeAjaxQuery(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    readyStateChangeHandler(xhttp);
+  };
+  xhttp.open("GET", "Question3.xml", true);
+  xhttp.send();
+}
+
+function readyStateChangeHandler(xhttp){
+  if (xhttp.readyState == 4){
+    // readyState = 4 means DONE
+    if(xhttp.status == 200){
+      // status = 200 means OK
+      handleStatusSuccess(xhttp);
+    }else{
+      // status is NOT OK
+      handleStatusFailure(xhttp);
+    }}}
+
+
+    function handleStatusFailure(xhttp){
+
+      var displayDiv = document.getElementById("display");
+      displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;}
+
+
+    function handleStatusSuccess(xhttp){
+      var xml = xhttp.responseXML;
+      // parse the XML into an object
+      var marketObj = parseXMLMarket(xml);
+      // display the object on the page
+      displayMarket(marketObj);
+    }
+    function parseXMLMarket(xml){
+        var marketObj = {};
+      // get the market XML element
+      var marketElement = xml.getElementsByTagName("ItemCheckOut")[0];
+      // get the queryTime
+      marketObj.userLName = marketElement.getAttribute("userLName");
+      marketObj.userFName = marketElement.getAttribute("userFName");
+      // get the array of stock XML elements
+      var stockElementList = marketElement.getElementsByTagName("Item");
+      // create an array to hold stock objects
+      marketObj.stockList = [];
+
+      for(var i=0; i < stockElementList.length; i++){
+        // go through each stock XML element
+        var stockElement = stockElementList[i];
+        // parse the stock XML element into an object
+        var stockObj = parseStockElement(stockElement);
+        // add the stock object into the stockList array
+        marketObj.stockList.push(stockObj);
+      }
+      return marketObj;  }
+
+      function parseStockElement(stockElement){
+        //create an stock object
+        var stockObj = {};
+
+        var TitleElement = stockElement.getElementsByTagName("Title")[0];
+        stockObj.Title = TitleElement.textContent;
+
+        var AuthorsElement = stockElement.getElementsByTagName("Authors")[0];
+        stockObj.Authors = valueElement.textContent;
+
+
+        var CallNumberElement = stockElement.getElementsByTagName("CallNumber")[0];
+        stockObj.CallNumber = Number(CallNumberElement.textContent);
+
+
+        var DueTateElement = stockElement.getElementsByTagName("DueTate")[0];
+        stockObj.DueTate = Number(DueTateElement.textContent);
+
+        var OverdueElement = stockElement.getElementsByTagName("Overdue")[0];
+        stockObj.Overdue = OverdueElement.textContent;
+
+        return stockObj;
+      }
+
+      // display the market object on the page
+      function displayMarket(marketObj){
+        // print the marketObj on the console
+        // console.log(marketObj);
+
+        // construct HTML code to display market information
+        var html = "<h2>Patron record: " + marketObj.userLName +" "+ marketObj.userFName + "</h2>";
+
+        html += "<table border='1'>";
+
+        html += "<tr> <td>Title</td>  <td> Author </td>  <td>Call number</td>  <td> Due </td> <td> Overdue </td> </tr>";
+
+        for(var i=0; i < marketObj.stockList.length; i++){
+
+          var stockObj = marketObj.stockList[i];
+
+          html += "<tr>";
+
+          html += "<td>" + stockObj.Title + "</td>";
+          html += "<td >" + stockObj.Authors + "</td>";
+
+          html += "<td >" + stockObj.CallNumber + "</td>";
+          html += "<td >" + stockObj.DueTate + "</td>";
+          html += "<td >" + stockObj.Overdue  + "</td>";
+          html += "</tr>";
+        }
+
+        html += "</table>";
+
+        // show the constructed HTML code in the display div
+        var displayDiv = document.getElementById("display");
+        displayDiv.innerHTML = html;
+      }
+
+   </script>
+ </head>
+ <body>
+   <button onClick="makeAjaxQuery()">
+    Get Patron Record
+   </button>
+
+  <br /><br />
+  <div id="display">
+  </div>
+
+ </body>
+</html>

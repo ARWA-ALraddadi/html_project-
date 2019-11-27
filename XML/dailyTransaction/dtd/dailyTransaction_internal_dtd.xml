@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE dailyTransaction [
+   <!ELEMENT dailyTransaction (person*)>
+   <!ATTLIST dailyTransaction date CDATA #REQUIRED>
+   <!ELEMENT person (firstName,lastName,mobile)>
+   <!ATTLIST person staffDbId CDATA #REQUIRED>
+   <!ATTLIST person operation CDATA #REQUIRED>
+   <!ELEMENT firstName (#PCDATA)>
+   <!ELEMENT lastName (#PCDATA)>
+   <!ELEMENT mobile (#PCDATA)> 
+]>
+<dailyTransaction date="24/02/2015">
+  <person staffDbId="103" operation="update">
+    <firstName>John</firstName>
+    <lastName>Smith</lastName>
+    <mobile>0211223344</mobile>
+  </person>
+  <person staffDbId="-1" operation="add">
+    <firstName>Mary</firstName>
+    <lastName>Jane</lastName>
+    <mobile>0244556677</mobile>
+  </person>
+</dailyTransaction>
+

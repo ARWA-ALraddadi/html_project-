@@ -1,0 +1,88 @@
+<!-- 
+Joseph Tonien
+Form example
+-->
+
+<html>
+<head>
+<title>Form example</title>
+</head>
+<body>
+ 
+
+
+<form action="handle_service" method="get">
+  First name:<br />
+  <input type="text" name="firstname" size="30"><br />
+  Last name:<br />
+  <input type="text" name="lastname" size="30"><br />
+  
+  <br /><br />
+  
+  Username:<br />
+  <input type="text" name="username" size="30"><br />
+  Password:<br />
+  <input type="password" name="password" size="30"><br />
+  
+  <br /><br />
+  
+  Choose journals to subscribe:<br />
+  <input type="checkbox" name="journal" value="AMM">American Mathematical Monthly<br />
+  <input type="checkbox" name="journal" value="CMJ">College Mathematics Journal<br />
+  <input type="checkbox" name="journal" value="MM">Mathematics Magazine<br />
+  
+  <br /><br />
+  
+  Choose subscription method:<br />
+  <input type="checkbox" name="subscription" value="e" checked="checked">eJournal<br />
+  <input type="checkbox" name="subscription" value="paper">Hard copy<br />
+
+  <br /><br />
+  
+  Select student type: <br />
+  <input type="radio" name="studentType" value="u"> Undergraduate 
+  <input type="radio" name="studentType" value="p"> Postgraduate 
+  <input type="radio" name="studentType" value="other" checked="checked"> Other
+ 
+  <br /><br />
+  
+  Select day:<br />
+  <select name="arrive">
+    <option value="mon">Monday</option>
+    <option value="tue">Tuesday</option>
+    <option value="wed">Wednesday</option>
+    <option value="thu">Thursday</option>
+    <option value="fri" selected="selected">Friday</option>
+  </select>
+  
+  <br /><br />
+  
+  Select day:<br />
+  <select name="departure" multiple>
+    <option value="mon">Monday</option>
+    <option value="tue">Tuesday</option>
+    <option value="wed">Wednesday</option>
+    <option value="thu">Thursday</option>
+    <option value="fri">Friday</option>
+  </select>
+  
+  <br /><br />
+  
+  Enter your comment:<br />
+  <textarea name="comment" rows="5" cols="30">
+  </textarea>
+  
+  <br /><br />
+  
+  <input type="submit" value="Login">
+  <input type="reset" value="Reset form">
+  
+</form>
+
+<!-- this is 
+a long comment
+it will not be displayed on the web page
+-->
+
+</body>
+</html>

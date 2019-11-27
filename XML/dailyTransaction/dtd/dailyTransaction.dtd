@@ -1,0 +1,8 @@
+<!ELEMENT dailyTransaction (person*)>
+<!ATTLIST dailyTransaction date CDATA #REQUIRED>
+<!ELEMENT person (firstName,lastName,mobile)>
+<!ATTLIST person staffDbId CDATA #REQUIRED>
+<!ATTLIST person operation CDATA #REQUIRED>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT mobile (#PCDATA)> 

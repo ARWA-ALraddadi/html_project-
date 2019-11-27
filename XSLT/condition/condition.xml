@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="style2.xsl"?>
+<example>
+  <data>
+    <num>-1</num>
+    <word>minus one</word>
+  </data>
+  <data>
+    <num>-2</num>
+    <word>minus two</word>
+  </data>
+  <data>
+    <num>-3</num>
+    <word>minus three</word>
+  </data>
+  <data>
+    <num>-4</num>
+    <word>minus four</word>
+  </data>
+  <data>
+    <num>-5</num>
+    <word>minus five</word>
+  </data>
+  <data>
+    <num>-6</num>
+    <word>minus six</word>
+  </data>
+  <data>
+    <num>-7</num>
+    <word>minus seven</word>
+  </data>
+  <data>
+    <num>-8</num>
+    <word>minus eight</word>
+  </data>
+  <data>
+    <num>-9</num>
+    <word>minus nine</word>
+  </data>
+  <data>
+    <num>-10</num>
+    <word>minus ten</word>
+  </data>
+  <data>
+    <num>-11</num>
+    <word>minus eleven</word>
+  </data>
+  <data>
+    <num>-12</num>
+    <word>minus twelve</word>
+  </data>
+  <data>
+    <num>-13</num>
+    <word>minus thirteen</word>
+  </data>
+  <data>
+    <num>-14</num>
+    <word>minus fourteen</word>
+  </data>
+  <data>
+    <num>-15</num>
+    <word>minus fifteen</word>
+  </data>
+  <data>
+    <num>-16</num>
+    <word>minus sixteen</word>
+  </data>
+  <data>
+    <num>-17</num>
+    <word>minus seventeen</word>
+  </data>
+  <data>
+    <num>-18</num>
+    <word>minus eighteen</word>
+  </data>
+  <data>
+    <num>-19</num>
+    <word>minus nineteen</word>
+  </data>
+
+  <data>
+    <num>0</num>
+    <word>zero</word>
+  </data> 
+
+  <data>
+    <num>1</num>
+    <word>one</word>
+  </data>
+  <data>
+    <num>2</num>
+    <word>two</word>
+  </data>
+  <data>
+    <num>3</num>
+    <word>three</word>
+  </data>
+  <data>
+    <num>4</num>
+    <word>four</word>
+  </data>
+  <data>
+    <num>5</num>
+    <word>five</word>
+  </data>
+  <data>
+    <num>6</num>
+    <word>six</word>
+  </data>
+  <data>
+    <num>7</num>
+    <word>seven</word>
+  </data>
+  <data>
+    <num>8</num>
+    <word>eight</word>
+  </data>
+  <data>
+    <num>9</num>
+    <word>nine</word>
+  </data>
+  <data>
+    <num>10</num>
+    <word>ten</word>
+  </data>
+  <data>
+    <num>11</num>
+    <word>eleven</word>
+  </data>
+  <data>
+    <num>12</num>
+    <word>twelve</word>
+  </data>
+  <data>
+    <num>13</num>
+    <word>thirteen</word>
+  </data>
+  <data>
+    <num>14</num>
+    <word>fourteen</word>
+  </data>
+  <data>
+    <num>15</num>
+    <word>fifteen</word>
+  </data>
+  <data>
+    <num>16</num>
+    <word>sixteen</word>
+  </data>
+  <data>
+    <num>17</num>
+    <word>seventeen</word>
+  </data>
+  <data>
+    <num>18</num>
+    <word>eighteen</word>
+  </data>
+  <data>
+    <num>19</num>
+    <word>nineteen</word>
+  </data>
+
+</example>

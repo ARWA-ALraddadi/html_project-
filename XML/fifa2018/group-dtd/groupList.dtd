@@ -1,0 +1,8 @@
+<!ELEMENT groupList (group+)>
+<!ELEMENT group (team+)>
+<!ELEMENT team (country, code)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT code (#PCDATA)>
+<!ATTLIST groupList year CDATA #REQUIRED>
+<!ATTLIST group name (A|B|C|D|E|F|G|H) #REQUIRED>
+<!ATTLIST team position (1|2|3|4) #REQUIRED>

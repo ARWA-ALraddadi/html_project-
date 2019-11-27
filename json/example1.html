@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>JSON example</title>
+
+<script>
+
+function showObjectJSON(){
+  //create a student object
+  var studentObj = {};
+  studentObj.fullname = "John Smith";
+  studentObj.studentNumber = "U1234567";
+  studentObj.age = 20;
+  studentObj.csMajor = true;
+
+  //get JSON string from the javascript object
+  var studentJSON = JSON.stringify(studentObj);
+	
+  //print the JSON string to the console
+  console.log(studentJSON);
+}
+
+
+</script>
+</head>
+<body>
+<h1>JSON: Example 1: JSON.stringify</h1>
+
+<pre>
+<code>
+function showObjectJSON(){
+
+  //create a student object
+  var studentObj = {};
+  studentObj.fullname = &quot;John Smith&quot;;
+  studentObj.studentNumber = &quot;U1234567&quot;;
+  studentObj.age = 20;
+  studentObj.csMajor = true;
+
+  //get JSON string from the javascript object
+  var studentJSON = JSON.stringify(studentObj);
+	
+  //print the JSON string to the console
+  console.log(studentJSON);
+}
+</code>
+</pre>
+
+<br /><br />
+
+<button onClick="showObjectJSON()">
+Click here to see JSON string
+</button>
+
+
+<br /><br />
+View the console for the output.
+
+</body>
+</html>

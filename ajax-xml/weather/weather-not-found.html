@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Ajax example</title>
+
+<script>
+function makeAjaxQueryWeather(){
+
+  // create an XMLHttpRequest
+  var xhttp = new XMLHttpRequest();
+
+  // create a handler for the readyState change
+  xhttp.onreadystatechange = function() {
+
+    readyStateChangeHandler(xhttp);
+    
+  };
+
+  // get XML file by making async call
+  // this file does not exist in the server!!!
+  xhttp.open("GET", "FROG.xml", true);
+  xhttp.send();
+}
+
+// handler for the readyState change
+function readyStateChangeHandler(xhttp){
+
+  if (xhttp.readyState == 4){
+    // readyState = 4 means DONE
+
+    if(xhttp.status == 200){
+      // status = 200 means OK
+
+      handleStatusSuccess(xhttp);
+
+    }else{
+      // status is NOT OK
+
+      handleStatusFailure(xhttp);
+
+    }
+  }
+
+}
+
+// XMLHttpRequest failed
+function handleStatusFailure(xhttp){
+
+  // display error message
+
+  var displayDiv = document.getElementById("display");
+
+  displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;
+}
+
+// XMLHttpRequest success
+function handleStatusSuccess(xhttp){
+
+  var xml = xhttp.responseXML;
+
+  // parse the XML into an object
+  var weatherObj = parseXMLWeather(xml);
+
+  // display the object on the page
+  displayWeather(weatherObj);
+}
+
+// parse the XML into an object
+function parseXMLWeather(xml){
+
+  // print XML on the console
+  // console.log(xml);
+
+  //create an object to hold the information in the xml file
+  var weatherObj = {};
+  
+  // get the weather XML element
+  var weatherElement = xml.getElementsByTagName("weather")[0];
+
+  // get the query location
+  weatherObj.queryLocation = weatherElement.getAttribute("queryLocation");
+
+  // get the forecast XML element
+  var forecastElement = weatherElement.getElementsByTagName("forecast")[0];
+
+  // get the forecast
+  weatherObj.forecast = forecastElement.textContent;
+
+  // get the temperature XML element  
+  var temperatureElement = weatherElement.getElementsByTagName("temperature")[0];
+
+  // get the temperature
+  weatherObj.temperatureDegree = temperatureElement.textContent;
+  weatherObj.temperatureScale = temperatureElement.getAttribute("scale");
+
+  // get the humidity XML element  
+  var humidityElement = weatherElement.getElementsByTagName("humidity")[0];
+
+  // get the humidity
+  weatherObj.humidity = humidityElement.textContent;
+
+  // get the wind XML element 
+  var windElement = weatherElement.getElementsByTagName("wind")[0];
+
+  // get the wind speed
+  weatherObj.windSpeed = windElement.textContent;
+
+  return weatherObj;
+
+}
+
+// display the weather object on the page
+function displayWeather(weatherObj){
+  // print the weatherObj on the console
+  // console.log(weatherObj);
+
+  // construct HTML code to display weather information
+  var html = "<h1>" + weatherObj.queryLocation + "</h1>";
+
+  html = html + "<font size='5' color='gray'>" + weatherObj.forecast + "</font>";
+  html = html + "<br /><br />";
+  
+  html = html + "<font size='7'>" + weatherObj.temperatureDegree + "</font>";
+  html = html + "&deg;" + weatherObj.temperatureScale;
+  html = html + "<br /><br />";
+
+  html = html + "<i>Humidity: " + weatherObj.humidity + "</i>";
+  html = html + "<br />";
+
+  html = html + "<i>Wind speed: " + weatherObj.windSpeed + "</i>";
+
+  // show the constructed HTML code in the display div
+  var displayDiv = document.getElementById("display");
+  displayDiv.innerHTML = html;
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>Ajax Example: Weather Forecast - file not found case</h1>
+
+<button onClick="makeAjaxQueryWeather()">
+Get Weather XML
+</button>
+
+<br /><br />
+
+<div id="display">
+</div>
+
+</body>
+</html>

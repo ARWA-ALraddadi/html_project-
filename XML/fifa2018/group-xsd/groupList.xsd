@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+ <!-- definition of team -->
+
+ <xsd:element name="team">
+   <xsd:complexType>
+     <xsd:sequence>
+       <xsd:element name="country" type="xsd:string"/>
+       <xsd:element name="code" type="xsd:string"/>
+     </xsd:sequence>
+     <xsd:attribute name="position" type="xsd:positiveInteger" use="required"/>
+   </xsd:complexType>
+ </xsd:element>
+
+ <!-- definition of group -->
+
+ <xsd:element name="group">
+   <xsd:complexType>
+     <xsd:sequence>
+       <xsd:element ref="team" minOccurs="4" maxOccurs="4"/>
+     </xsd:sequence>
+     <xsd:attribute name="name" type="xsd:string" use="required"/>
+   </xsd:complexType>
+ </xsd:element>
+
+ <!-- definition of groupList -->
+
+ <xsd:element name="groupList">
+   <xsd:complexType>
+     <xsd:sequence>
+       <xsd:element ref="group" minOccurs="8" maxOccurs="8"/>
+     </xsd:sequence>
+     <xsd:attribute name="year" type="xsd:positiveInteger" use="required"/>
+   </xsd:complexType>
+ </xsd:element>
+ 
+</xsd:schema>

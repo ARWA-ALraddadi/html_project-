@@ -1,0 +1,45 @@
+<?xml version="1.0" ?> 
+<market queryTime="24/02/2015 11:30:00">
+  <stock>
+    <name>NASDAQ</name>
+    <value>4725.64</value>
+    <change>-37.58</change>
+    <netpct>0.79</netpct>
+  </stock>
+  <stock>
+    <name>NASDAQ-100 (NDX)</name>
+    <value>4312.01</value>
+    <change>-29.38</change>
+    <netpct>0.68</netpct>
+  </stock>
+  <stock>
+    <name>Pre-Market (NDX)</name>
+    <value>4316.29</value>
+    <change>-25.1</change>
+    <netpct>0.58</netpct>
+  </stock>
+  <stock>
+    <name>After Hours (NDX)</name>
+    <value>4320.61</value>
+    <change>8.6</change>
+    <netpct>0.20</netpct>
+  </stock>
+  <stock>
+    <name>DJIA</name>
+    <value>17651.26</value>
+    <change>-99.65</change>
+    <netpct>0.56</netpct>
+  </stock>
+  <stock>
+    <name>S&amp;P 500</name>
+    <value>2051.12</value>
+    <change>-12.25</change>
+    <netpct>0.59</netpct>
+  </stock>
+  <stock>
+    <name>Russell 2000</name>
+    <value>1113.13</value>
+    <change>-8.62</change>
+    <netpct>0.77</netpct>
+  </stock>
+</market>

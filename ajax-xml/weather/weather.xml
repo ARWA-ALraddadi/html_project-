@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<weather queryLocation="Wollongong">
+  <forecast>Mostly Cloudy</forecast>
+  <temperature scale="C">21</temperature>
+  <humidity>66%</humidity>
+  <wind>18 km/h</wind>
+</weather>

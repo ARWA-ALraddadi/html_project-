@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Question2.xsl"?>
+<!DOCTYPE ItemCheckOut [
+   <!ELEMENT ItemCheckOut (Item+)>
+   <!ELEMENT Item (Title,Authors,CallNumber,DueTate)>
+   <!ELEMENT Title (#PCDATA)>
+   <!ELEMENT Authors (#PCDATA)>
+   <!ELEMENT CallNumber (#PCDATA)>
+   <!ELEMENT DueTate (#PCDATA)>
+   <!ELEMENT overdue (#PCDATA)>
+   <!ATTLIST ItemCheckOut userLName CDATA #REQUIRED>
+   <!ATTLIST ItemCheckOut userFName CDATA #REQUIRED>
+]>
+
+
+  <ItemCheckOut userLName = "Smith" userFName ="John ">
+    <Item>
+    <Title> Wireless network security </Title>
+    <Authors> T.Wrightson </Authors>
+    <CallNumber> 212.12/56 </CallNumber>
+    <DueTate> 26-12-2016 </DueTate>
+    </Item>
+
+    <Item>
+    <Title> Analysis </Title>
+    <Authors>T. Tao </Authors>
+    <CallNumber> 515/305 </CallNumber>
+    <DueTate> 23-12-2016 </DueTate>
+    </Item>
+
+    <Item>
+    <Title>The art of computer programming </Title>
+    <Authors> D.E. Knuth </Authors>
+    <CallNumber> 005.1/300 </CallNumber>
+    <DueTate> 25-11-2016 </DueTate>
+    <Overdue> Overdue </Overdue>
+    </Item>
+
+    <Item>
+    <Title> Python for dummies </Title>
+    <Authors>S. Maruch and A. Ranum </Authors>
+    <CallNumber> 145.3/57 </CallNumber>
+    <DueTate> 01-10-2016 </DueTate>
+    <Overdue> Overdue </Overdue>
+    </Item>
+  </ItemCheckOut>

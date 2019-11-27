@@ -1,0 +1,182 @@
+<html>
+ <head>
+   <script>
+     adultTICK = 50;
+     childTIVK= 20;
+     function change_color(value){
+       var text1 = document.getElementById("personal") ;
+       var text2 = document.getElementById("policy") ;
+       if (value == "color"){
+         text1.style.color = "purple";
+         text2.style.color = "orange";}
+      else {
+       text1.style.color = "black";
+       text2.style.color = "black";}
+     }
+     function Ocean_Park(){
+
+       var input_d = document.getElementById("adult");
+       var num_adult = Number(input_d.value);
+       var input_c = document.getElementById("children");
+       var num_chid = Number(input_c.value);
+       var res = (num_adult * adultTICK) + (num_chid * childTIVK) ;
+       var display = document.getElementById("result");
+        display.value = res;
+        }
+
+      function multipTable(){
+        var inputnum = document.getElementById('multiX');
+        var num = Number(inputnum.value);
+        var displaylist = document.getElementById("list");
+        displaylist.innerHTML = "";
+        var displayunorder = document.getElementById("unorder");
+        displayunorder.innerHTML ="";
+        if (0 < num && num <= 9){
+        for (var i =1 ; i <= 9 ;i++){
+
+        displaylist.innerHTML += num + 'x' + i + "="+ num*i + "<br>" ;
+        displayunorder.innerHTML += "<li>"+num + 'x' + i + "="+ num*i +"</li>";
+      }}
+      }
+      var counter = 0;
+      var counterSchedule;
+      var i = 1;
+
+      function startCounterAnimation(){
+     // start the counter animation
+     counterSchedule = setInterval(showCounter, 1000);}
+
+     function showCounter(){
+       var input = document.getElementById('animat');
+       var animaNum = Number(input.value);
+      // increase the counter by 1
+      if ( counter <9){
+      counter += 1
+      result = counter * animaNum ;
+      // show the counter
+     var counterSpan = document.getElementById("displayAnimation");
+     counterSpan.innerHTML = counter + "x"+ animaNum + "="+ result+"<br/>";}
+     else {counter = 0; }}
+
+     function stopCounterAnimation(){
+       clearInterval(counterSchedule);
+       counter = 0; }
+
+ var scorerr = 0 ;
+ var inputnum ;
+ var checkcoun ;
+ var counte ;
+
+function choose_number() {
+  inputnum = prompt("Choose integer from 0 to 9 ");
+  if (inputnum != null) {
+  document.getElementById("word").innerHTML = "Your chosen number is : "  ;
+  document.getElementById("chosenNumber").innerHTML = inputnum ;
+  scorerr = 0
+  score();
+  startGame();
+  }
+}
+function score() {
+  scorerr = 0
+  document.getElementById("statment").innerHTML = "Your score so far: "  ;
+  document.getElementById("score").innerHTML = scorerr ;
+
+}
+ function rendomnumber (){
+  var num1 = Math.floor(Math.random() * 10);
+ document.getElementById("num1").innerHTML = num1 ;
+ document.getElementById("num1").onclick = function() {check(num1)};
+
+ var num2 = Math.floor(Math.random() * 10);
+ var num3 = Math.floor(Math.random() * 10);
+ var num4 = Math.floor(Math.random() * 10);
+
+ document.getElementById("num2").innerHTML = num2;
+ document.getElementById("num3").innerHTML = num3;
+ document.getElementById("num4").innerHTML = num4;
+
+ document.getElementById("num2").onclick = function() {check(num2)};
+ document.getElementById("num3").onclick = function() {check(num3)};
+ document.getElementById("num4").onclick = function() {check(num4)};
+}
+function check(num) {
+    if( inputnum == num ){
+    scorerr += 1 ;}
+    else { scorerr = scorerr -1 ;}
+    document.getElementById("score").innerHTML = scorerr ;
+
+}
+
+  function startGame(){
+     // start the counter animation
+     counte = setInterval(rendomnumber, 1000);
+   }
+
+     function Stopgame(){
+       clearInterval(counte);
+       clearInterval(checkcoun);
+       scorerr = 0}
+
+
+   </script>
+ </head>
+
+ <body>
+   <span id = "personal"> <b>Personal Information statement: </b> Arwa Alraddadi, CSIT228 Introduction to Web Technology,
+     Assignment 5 (5%) due on Saturday 21 September 2019 at 7:00pm,TUS 1:30 - 3:30 PM </span><br/>
+  <button onclick="change_color('color');"> Turn on color </button>
+   <button onclick="change_color('black');"> Turn off color </button> <br/>
+   <span id ="policy"> <b>Policy statement:</b> I have read the policy for plagiarism at Wollongong University. I declare that
+       this assignment solution is entirely my work. I acknowledge that this assignment is scheduled to
+       be marked in the computer lab in Week 9 and Week 10, and absence from the labs may result in
+       zero mark. </span>
+    <hr>
+    <h4>Enter number of adult tickets</h4>
+    <input type="text" id="adult" />
+    <h4>Enter number of children tickets</h4>
+    <input type="text" id="children" />
+    <button onclick="Ocean_Park();"> Calculate total cost </button>
+    <input type="text" id="result" />
+
+    <hr>
+    Enter an integer from 1 to 9 :
+    <input type="text" id="multiX" />
+    <button onclick=" multipTable();"> Generate times table </button>
+
+    <table style="width:100%" >
+      <tr >
+        <td> <p id = "list"> </p> </td>
+        <td><ul>
+           <p id = "unorder"></p>
+        </ul> </td>
+      </tr>
+    </table>
+
+    <hr>
+    Enter an integer from 1 to 9 :
+    <input type="text" id="animat" />
+    <button onclick="startCounterAnimation()"> Start Animation </button>
+    <button onclick=" stopCounterAnimation();"> Stop Animation </button>
+    <br/>
+    <span id ="displayAnimation"> </span>
+    <hr>
+
+    <button onclick="choose_number()">Start Game </button>
+    <button onclick=" Stopgame()"> Stop Game </button> <br/>
+
+    <span id="word"></span>
+    <span id="chosenNumber" style="color:MediumSeaGreen;font-size: 2em"> </span> <br/>
+    <span id="statment"></span>
+    <span id="score" style="color:Red;font-size: 2em"> </span><br/>
+
+    <span onclick="check();" id="num1" style="color:Red;font-size: 7em"> </span>
+    <span id="num2" style="color:orange;font-size: 7em"> </span>
+    <span id="num3" style="color:blue;font-size: 7em"> </span>
+    <span id="num4" style="color:purple;font-size: 7em"> </span>
+
+
+
+
+ </body>
+</html>

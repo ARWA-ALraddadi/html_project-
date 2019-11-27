@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>JSON example</title>
+
+<script>
+
+function showArrayJSON(){
+  var user1 = {};
+  user1.firstName = "John";
+  user1.lastName = "Smith";
+  
+  var user2 = {};
+  user2.firstName = "Kate";
+  user2.lastName = "Williams";
+  
+  //create an array of user objects
+  var userList = [user1, user2];
+
+  //get JSON string from the javascript array
+  var userListJSON = JSON.stringify(userList);
+	
+  //print the JSON string to the console
+  console.log(userListJSON);
+}
+
+
+</script>
+</head>
+<body>
+
+<h1>JSON: example 3</h1>
+
+<pre>
+<code>
+function showArrayJSON(){
+
+  var user1 = {};
+  user1.firstName = &quot;John&quot;;
+  user1.lastName = &quot;Smith&quot;;
+  
+  var user2 = {};
+  user2.firstName = &quot;Kate&quot;;
+  user2.lastName = &quot;Williams&quot;;
+  
+  //create an array of user objects
+  var userList = [user1, user2];
+
+  //get JSON string from the javascript array
+  var userListJSON = JSON.stringify(userList);
+	
+  //print the JSON string to the console
+  console.log(userListJSON);
+}
+</code>
+</pre>
+
+<button onClick="showArrayJSON()">
+Click here to see JSON string
+</button>
+
+
+<br /><br />
+View the console for the output.
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+
+<html>
+
+<head>
+</head>
+
+<body> 
+<h1> Arwa Alraddadi </h1> <br/>
+<h2>CSIT228 Introduction to Web Technology </h2> <br/>
+<h2> Assignment 2 due on Saturday 24 August 2019 at 7:00pm </h2> <br/>
+<h2> TUS 1:30 - 3:30 PM </h2> <br/>
+
+<p> <b>
+I have read the policy for plagiarism at Wollongong University. I
+declare that this assignment solution is entirely my work. 
+</b> </p> 
+
+<p> <i>
+I acknowledge that this assignment is scheduled to be marked in the
+computer lab in Week 5 and Week 6, and absence from the labs may result in zero mark. 
+<i/> </p>
+
+<hr>
+
+<form action="http://whosville.com/job" method="get">
+<table>
+<tr>
+<td height="50"> Full Name </td>
+<td>  <input type="text" name="name" >  </td>
+</tr>
+
+<tr>
+<td>  Email Address </td>
+<td>  <input type="text" name="email" >  </td>
+</tr>
+
+<tr>
+<td height="50" > Contact Phone Number  </td>
+<td>  <input type="text" name="phone" >  </td>
+</tr>
+ 
+<tr>
+<td height="80" > Position  </td>
+<td> 
+<input type="checkbox" name="position" value="se"/> Software Engineer <br/>
+<input type="checkbox" name="position" value="da"/>  Database Administrator <br/>
+<input type="checkbox" name="position" value="web"/> Web Developer <br/>
+<input type="checkbox" name="position" value="sa"/>  Systems Analyst <br/>
+<input type="checkbox" name="position" value="ne"/> Network Engineer <br/>
+</td>
+</tr>
+
+<tr>
+<td height="50" > Highest Education Level </td>
+<td>  
+<select name=" education">
+<option value= "hsc" > High School Certificate  </option>
+<option value ="college">  College Certificate </option>
+<option value ="uni">  Bachelor Degree </option>
+<option value ="master">   Masters Degree </option>
+<option value ="phd">   Ph.D. Degree  </option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td  height="50" valign="top" >  Programming Language Skills </td>
+<td> 
+<input type="checkbox" name=" plang" value="cplus"/> C++  <br/>
+<input type="checkbox" name=" plang" value="csharp"/>  C#  <br/>
+<input type="checkbox" name=" plang" value="java"/> JAVA <br/>
+<input type="checkbox" name=" plang" value="js"/>  JavaScript <br/>
+<input type="checkbox" name=" plang" value="py"/> Python <br/>
+<input type="checkbox" name=" plang" value="sql"/>  SQL <br/>
+<input type="checkbox" name=" plang" value="php"/> PHP <br/>
+</td>
+</tr>
+
+<tr>
+<td height="50" > Other Programming Language </td>
+<td>  <input type="text" name=" otherlang" >  </td>
+</tr>
+
+<tr>
+<td height="50" > Introductory Text  </td>
+<td> <textarea name="intro" rows="5" cols="20" > </textarea> </td>
+</tr>
+
+<tr>
+<td  height="50" align="right"> <input type="submit" value="submit" > </td>
+<td align="left">  <input type="reset" value="Reset Form " >  </td>
+</tr>
+
+<table>
+</form>
+<hr> 
+
+
+
+
+<form action="http://whosville.com/job" method="get">
+<table>
+<tr>
+<td> Full Name </td>
+<td>  <input type="text" name="name" >  </td>
+</tr>
+
+<tr>
+<td>  Email Address </td>
+<td>  <input type="text" name="email" >  </td>
+</tr>
+
+<tr>
+<td> Contact Phone Number  </td>
+<td>  <input type="text" name="phone" >  </td>
+</tr>
+ 
+<tr>
+<td height="80" > Position  </td>
+<td> 
+<select name="position" multiple>
+  <option value="se" > Software Engineer </option>
+  <option value="da" >  Database Administrator </option>
+  <option value="web"> Web Developer </option>
+  <option value="sa" >  Systems Analyst </option>
+  <option value="ne" > Network Engineer </option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td valign="top" > Highest Education Level </td>
+<td>  
+<input type="radio" name=" education" value= "hsc" > High School Certificate <br/>
+<input type="radio" name=" education" value ="college">  College Certificate <br/>
+<input type="radio" name=" education" value ="uni">  Bachelor Degree <br/>
+<input type="radio" name=" education" value ="master">   Masters Degree <br/>
+<input type="radio" name=" education" value ="phd">   Ph.D. Degree  <br/>
+
+</td>
+</tr>
+
+<tr>
+<td valign="top" >  Programming Language Skills </td>
+<td> 
+<select name=" plang" multiple>
+ <option value="cplus" > C++  </option>
+ <option value="csharp">  C#  </option>
+ <option value="java"  > JAVA </option>
+ <option value="js"    >  JavaScript </option>
+ <option value="py"    > Python </option>
+ <optionvalue="sql"    >  SQL </option>
+ <option value="php"   > PHP </option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td> Other Programming Language </td>
+<td>  <input type="text" name=" otherlang" >  </td>
+</tr>
+
+<tr>
+<td > Introductory Text  </td>
+<td> <textarea name="intro"> </textarea> </td>
+</tr>
+
+<tr>
+<td  height="50" align="right"> <input type="submit" value="submit" > </td>
+<td align="left">  <input type="reset" value="Reset Form " >  </td>
+</tr>
+
+<table>
+</form>
+<hr> 
+
+<h2> Coffee Grove Madinah Application </h2> 
+<p><i>
+The Coffee Grove Madinah has a web form that allows users to order roasted coffee beans.<br/>
+The back-end service is running at
+http://CoffeeGroveMadinah.com/order and it accepts GET request with the following parameters: 
+</i></p> 
+ 
+
+<ul> 
+<li> name: this parameter is to specify full name </li> 
+<li> phone: this parameter is to specify contact phone number </li>
+<li> address: this parameter is to specify home address </li>
+
+<li> td : this parameter is to specify type of address 
+<ul> <li> res: Residend type of address  </li> <li> bus: Business type of address </li></ul></li>
+
+
+<li> cofbn: this parameter is to specify coffee Beans Type
+<ul> <li> cl:  Colombian coffee </li>
+<li> eth: Ethiopian coffee  </li> 
+<li> ken: Kenya Coffee   </li>
+<li> arb: Arabica coffee   </li></ul></li>
+
+<li> cofp: this parameter is to specify coffee Beans processed
+<ul> <li> na:  Natural Processing </li>
+<li> wash: Washed Processing  </li> 
+<li> hon: Honey Processing  </li></ul></li>
+
+<li>wt: this parameter is to specify coffee wight  
+<ul> <li> one: 250 grams </li>
+<li> two: 500 grams </li> 
+<li> thr: one kilograms </li></ul></li>
+
+
+<li> grd: this parameter is to specify Grind Type 
+<ul> <li> cr:  Coarse Grind  </li>
+<li> mc:  Medium-Coarse Grind </li> 
+<li> med: Medium Grind</li>
+<li> fin: Fine Grind</li></ul></li>
+
+<li>  mgift: this parameter to write a short Gift Message  </li> </ul> 
+
+
+<hr>
+
+<form action="http://CoffeeGroveMadinah.com/" method="get">
+<table>
+<tr>
+<td> Full Name </td>
+<td> <input type="text" name="name" >  </td>
+</tr>
+
+<tr>
+<td> Contact Phone Number  </td>
+<td> <input type="text" name="phone" >  </td>
+</tr>
+
+<tr>
+<td>  Home Address </td>
+<td>  <input type="text" name="address" >  </td>
+</tr>
+
+<tr>
+<td> Type of Address </td>
+<td>  
+<input type="radio" name="td" value= "res" > Residend
+<input type="radio" name="td" value ="bus">  Business 
+</td></tr>
+
+<tr>
+<td valign="top" >coffee Beans Type</td>
+<td> 
+<input type="checkbox" name=" cofbn" value="cl"/> Colombian coffee   <br/>
+<input type="checkbox" name=" cofbn" value="eth"/>  Ethiopian coffee  <br/>
+<input type="checkbox" name=" cofbn" value="ken"/> Kenya Coffee  <br/>
+<input type="checkbox" name=" cofbn" value="arb"/>  Arabica coffee <br/>
+</td></tr>
+
+<tr>
+<td> Coffee Beans processed </td>
+<td> <select name=" cofp">
+ <option value="na" > Natural Processing </option>
+ <option value="wash">  Washed Processing  </option>
+ <option value="hon"  > Honey Processing </option>
+</select></td></tr>
+
+<tr>
+<td valign="top" > Wight </td>
+<td>  
+<input type="radio" name="wt" value= "one" > 250 G  <br/>
+<input type="radio" name="wt" value ="two">  500 G  <br/>
+<input type="radio" name="wt" value ="thr">  1 KG   <br/>
+</td></tr>
+
+
+<tr>
+<td valign="top" >cGrind Type</td>
+<td> 
+<input type="checkbox" name=" grd" value="cr"/> Coarse Grind    <br/>
+<input type="checkbox" name=" grd" value="mc"/>  Medium-Coarse Grind  <br/>
+<input type="checkbox" name=" grd" value="med"/> Medium Grind  <br/>
+<input type="checkbox" name=" grd" value="fin"/>  Fine Grind <br/>
+</td></tr>
+
+
+<tr>
+<td>   Gift Message </td>
+<td> <textarea name="mgift"> </textarea> </td>
+</tr>
+
+<tr>
+<td  height="50" align="right"> <input type="submit" value="submit" > </td>
+<td align="left">  <input type="reset" value="Reset Form " >  </td>
+</tr>
+
+
+
+
+</table>
+</form>
+
+
+</body>
+</html>

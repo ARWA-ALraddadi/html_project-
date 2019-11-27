@@ -1,0 +1,231 @@
+<html>
+  <head>
+   <!--JS code function -->
+    <script>
+     // function display st name
+     function show_name (){
+       var displayname = document.getElementById ("name");
+       displayname.innerHTML = "ARWA Alraddadi 6620760"; }
+     // function hide st name
+     function hide_name (){
+        var displayname = document.getElementById ("name");
+        displayname.innerHTML = " "; }
+     // function console name button
+     function name_console (){
+       console.log('ARWA Alraddadi 6620760'); }
+     // function display subject name and code
+     function show_subject (){
+       var displaySubj = document.getElementById ("subject");
+       displaySubj.innerHTML = 'CSIT228 Introduction to Web Technology'; }
+     // function hide subject name and code
+     function hide_subject (){
+        var displaySubj = document.getElementById ("subject");
+        displaySubj.innerHTML = " "; }
+     // function display subject name and code
+      function show_Assignment (){
+        var displayAssignment = document.getElementById ("Assignment");
+        displayAssignment.innerHTML = 'Assignment 4 (5%) due on Saturday 14 September 2019 at 7:00pm'; }
+     // function hide subject name and code
+      function hide_Assignment (){
+        var displayAssignment = document.getElementById ("Assignment");
+        displayAssignment.innerHTML = " "; }
+     // function display Lab Time
+        function show_labTime (){
+         var displaylab = document.getElementById ("labTime");
+          displaylab.innerHTML = 'TUS 1:30 - 3:30 PM'; }
+     // function hide subject name and code
+        function hide_labTime (){
+          var displaylab = document.getElementById ("labTime");
+          displaylab.innerHTML = " "; }
+      // function switch text
+      var postion = "Plagiarism_Attendance";
+      function SwitchText() {
+
+        if (postion == "Plagiarism_Attendance"){
+          postion = "Attendance_Plagiarism";
+          var leftText = document.getElementById('left');
+          leftText.innerHTML = " I acknowledge that this assignment is scheduled to be marked in the computer lab in Week 8 and  Week 9, and absence from the labs may result in zero mark." ;
+          var rightText = document.getElementById("right");
+          rightText.innerHTML = "I have read the policy for plagiarism at Wollongong University. I declare that this assignment solution is entirely my work. ";}
+       else {
+         postion = "Plagiarism_Attendance";
+         var leftText = document.getElementById('left');
+         leftText.innerHTML = "I have read the policy for plagiarism at Wollongong University. I declare that this assignment solution is entirely my work. ";
+         var rightText = document.getElementById("right");
+         rightText.innerHTML = " I acknowledge that this assignment is scheduled to be marked in the computer lab in Week 8 and Week 9, and absence from the labs may result in zero mark." ;}
+        }
+        //fcuntion is display cat text and image
+        function clickCat (){
+          var displayField = document.getElementById("textdisplay");
+          displayField.value = "User Clicks Cat";
+          var distextSt = document.getElementById("textSt") ;
+          distextSt.innerHTML = " Cat is Clicked" ;
+          var disimg = document.getElementById("imgDisplay");
+          disimg.src= "cat.png";}
+      //fcuntion is display Dog text and image
+        function clickDog (){
+          var displayField = document.getElementById("textdisplay");
+          displayField.value = "User Clicks Dog";
+          var distextSt = document.getElementById("textSt") ;
+          distextSt.innerHTML = " Dog is Clicked" ;
+          var disimg = document.getElementById("imgDisplay");
+          disimg.src= "dog.png";}
+      //fcuntion is display frog text and image
+        function clickFrog(){
+          var displayField = document.getElementById("textdisplay");
+          displayField.value = "User ClicksFrog";
+          var distextSt = document.getElementById("textSt") ;
+          distextSt.innerHTML = " Frog is Clicked" ;
+          var disimg = document.getElementById("imgDisplay");
+          disimg.src= "frog.png";}
+      //function count hour
+      var houtcount = 0;
+      var minuteCount = 0;
+        function hour (){
+          if (houtcount < 23 ){
+            houtcount = houtcount + 1 ;}
+          else { houtcount = 0; }
+          var hourspan = document.getElementById("hourCount");
+          hourspan.innerHTML = houtcount ;
+        }
+        function minute (){
+          if (minuteCount < 59 ){
+            minuteCount = minuteCount + 1 ;}
+          else { minuteCount = 0; }
+          var minutespan = document.getElementById("minuteCount");
+          minutespan.innerHTML = minuteCount ;
+        }
+        // function change animle image
+        function animel( pic ){
+          if (pic == 'cat' || pic == 'dog' ){
+          alert('Don’t click me, click the frog'); }
+          else {  alert('click the frog'); }
+         }
+
+        function change( ){
+
+          var disimg = document.getElementById("chanimg");
+          disimg.src= "frog.png";
+          var dis = document.getElementById("chanimg3");
+          dis.src= ""; }
+
+
+          function swap( ){
+            var disimg = document.getElementById("chanimg");
+            disimg.src= "";
+            var dis = document.getElementById("chanimg3");
+            dis.src= "frog.png";}
+
+
+    </script>
+  </head>
+  <body>
+    <!-- part one of Q1 student name and st num -->
+    <span id ="name"> </span>
+    <button onclick="show_name();">
+        SHOW NAME HERE
+    </button>
+    <button onclick="hide_name();">
+        HIDE NAME HERE
+    </button>
+    <button onclick="alert('ARWA Alraddadi 6620760');">
+      NAME ALERT HERE
+    </button>
+    <button onclick="name_console ();">
+      NAME Console HERE
+    </button> <br/>
+
+    <!-- part two of Q1 subject name and sub code -->
+    <span id ="subject"> </span>
+    <button onclick="show_subject();">
+        Show HERE
+    </button>
+    <button onclick="hide_subject();">
+         HIDE HERE
+    </button>
+    <button onclick="alert('CSIT228 Introduction to Web Technology');">
+       ALERT HERE
+    </button>
+    <button onclick="console.log('CSIT228 Introduction to Web Technology');">
+       Console HERE
+    </button> <br/>
+    <!-- part three of Q1 Assignment num and due date -->
+    <span id ="Assignment"> </span>
+    <button onclick="show_Assignment();">
+        Show HERE
+    </button>
+    <button onclick="hide_Assignment();">
+         HIDE HERE
+    </button>
+    <button onclick="alert('Assignment 4 (5%) due on Saturday 14 September 2019 at 7:00pm');">
+       ALERT HERE
+    </button>
+    <button onclick="console.log('Assignment 4 (5%) due on Saturday 14 September 2019 at 7:00pm');">
+       Console HERE
+    </button> <br/>
+    <!-- part four of Q1 lab time  -->
+    <span id ="labTime"> </span>
+    <button onclick="show_labTime();">
+        Show HERE
+    </button>
+    <button onclick="hide_labTime();">
+         HIDE HERE
+    </button>
+    <button onclick="alert('TUS 1:30 - 3:30 PM');">
+       ALERT HERE
+    </button>
+    <button onclick="console.log('TUS 1:30 - 3:30 PM');">
+       Console HERE
+    </button> <br/>
+    <hr>
+    <!-- Q2 switch between two tests  -->
+    <span id = "left" >
+           I have read the policy for plagiarism at Wollongong University.
+            I declare that this assignment solution is entirely my work.
+    </span> <br/>
+    <button onclick= "SwitchText();">
+          Switch HERE
+    </button> <br/>
+    <span id = "right" >
+           I acknowledge that this assignment is scheduled to be marked in the
+           computer lab in Week 8 and Week 9, and absence from the labs may
+           result in zero mark.
+    </span> <br/>
+    <hr>
+    <!-- Q3 of buttons “Cat”, “Dog” and “Frog”  buttons -->
+    <button onclick="clickCat ();" >
+          CAT
+    </button>
+    <button onclick="clickDog ();">
+          DOG
+    </button>
+    <button onclick="clickFrog ();" >
+          FROG
+    </button> <br/>
+    <input type="text" id = "textdisplay"/> <br/>
+    <span id ="textSt"> </span> <br/>
+    <img  id ="imgDisplay" /> <br/>
+    <hr>
+    <!-- Q4 hour and minute counter  -->
+    <button onclick=" hour();" >
+          HOURS
+    </button>
+    <h1> <span id ="hourCount"> 0</span>
+      :
+    <span id ="minuteCount"> 0</span>
+    </h1>
+    <button onclick=" minute ();">
+          MINUTE
+    </button>
+    <hr>
+    <img  id ='chanimg'  onClick= "swap();"/>
+    <img  id ='chanimg1' src="cat.png"  onClick= "animel('cat');" />
+    <img  id ='chanimg2' src="dog.png"  onClick= "animel('dog');" />
+    <img  id ='chanimg3' src="frog.png" onClick= "change();"/>
+
+
+
+
+  </body>
+
+</html>

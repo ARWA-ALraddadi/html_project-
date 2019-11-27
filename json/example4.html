@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>JSON example</title>
+
+<script>
+
+function showArray(){
+
+ //JSON string
+ var userListJSON = '[{"firstName":"John","lastName":"Smith"},{"firstName":"Kate","lastName":"Williams"}]';
+  
+ //get javascript array from JSON string 
+ var userList = JSON.parse(userListJSON);
+  
+ //print the object to the console
+ console.log(userList);
+ console.log("There are " + userList.length + " users");
+}
+
+</script>
+</head>
+<body>
+
+<h1>JSON: example 4</h1>
+
+<pre>
+<code>
+function showArray(){
+
+ //JSON string
+ var userListJSON = &apos;[{&quot;firstName&quot;:&quot;John&quot;,&quot;lastName&quot;:&quot;Smith&quot;},{&quot;firstName&quot;:&quot;Kate&quot;,&quot;lastName&quot;:&quot;Williams&quot;}]&apos;;
+  
+ //get javascript array from JSON string 
+ var userList = JSON.parse(userListJSON);
+  
+ //print the object to the console
+ console.log(userList);
+ console.log(&quot;There are &quot; + userList.length + &quot; users&quot;);
+}
+</code>
+</pre>
+
+<button onClick="showArray()">Click here to see array from JSON</button>
+
+<br /><br />
+
+View the console for the output.
+
+</body>
+</html>
