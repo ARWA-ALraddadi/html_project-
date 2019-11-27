@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>Ajax/Json example</title>
+
+<script>
+function makeAjaxQuery(){
+
+  // create an XMLHttpRequest
+  var xhttp = new XMLHttpRequest();
+
+  // create a handler for the readyState change
+  xhttp.onreadystatechange = function() {
+
+    readyStateChangeHandler(xhttp);
+    
+  };
+
+  // get JSON file by making async call
+  // this file frog.json does not exist in the server!!!
+  xhttp.open("GET", "frog.json", true);
+  xhttp.send();
+}
+
+// handler for the readyState change
+function readyStateChangeHandler(xhttp){
+
+  console.log("Callback function readyStateChangeHandler is executed");
+
+  // print the status and readyState on the console
+  console.log("readyState = " + xhttp.readyState);
+  console.log("status = " + xhttp.status);
+
+  // print the responseText on the console
+  console.log("responseText:");
+  console.log(xhttp.responseText);
+  console.log("");
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>Ajax/Json Example: Hello World</h1>
+
+<button onClick="makeAjaxQuery()">
+Get JSON file using AJAX
+</button>
+
+<br /><br />
+View the console for status update.
+
+</body>
+</html>

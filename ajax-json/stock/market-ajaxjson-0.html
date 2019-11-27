@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Ajax/Json example</title>
+
+<script>
+
+function makeAjaxQueryMarket(){
+
+  // create an XMLHttpRequest
+  var xhttp = new XMLHttpRequest();
+
+  // create a handler for the readyState change
+  xhttp.onreadystatechange = function() {
+
+    readyStateChangeHandler(xhttp);
+    
+  };
+
+  // get JSON file by making async call
+  xhttp.open("GET", "market.json", true);
+  xhttp.send();
+}
+
+// handler for the readyState change
+function readyStateChangeHandler(xhttp){
+
+  if (xhttp.readyState == 4){
+    // readyState = 4 means DONE
+
+    if(xhttp.status == 200){
+      // status = 200 means OK
+
+      handleStatusSuccess(xhttp);
+
+    }else{
+      // status is NOT OK
+
+      handleStatusFailure(xhttp);
+
+    }
+  }
+
+}
+
+// XMLHttpRequest failed
+function handleStatusFailure(xhttp){
+
+  // display error message
+
+  var displayDiv = document.getElementById("display");
+
+  displayDiv.innerHTML = "XMLHttpRequest failed: status " + xhttp.status;
+}
+
+// XMLHttpRequest success
+function handleStatusSuccess(xhttp){
+
+  var jsonText = xhttp.responseText;
+
+  // parse the json into an object
+  var marketObj = JSON.parse(jsonText);
+
+  // display the object on the page
+  displayMarket(marketObj);
+}
+
+
+// display the market object on the page
+function displayMarket(marketObj){
+  // print the marketObj on the console
+  // console.log(marketObj);
+
+  // construct HTML code to display market information
+  var html = "";
+
+  html += "queryTime: " + marketObj.queryTime; 
+  html += "<br /><br />";
+
+  for(var i=0; i < marketObj.stockList.length; i++){
+    var stockObj = marketObj.stockList[i];
+
+    html += "name: " + stockObj.name;
+    html += "<br />";
+
+    html += "value: " + stockObj.value;
+    html += "<br />";
+
+    html += "change: " + stockObj.change;
+    html += "<br />";
+
+    html += "netpct: " + stockObj.netpct;
+    html += "<br /><br />";
+  }
+
+
+  // show the constructed HTML code in the display div
+  var displayDiv = document.getElementById("display");
+  displayDiv.innerHTML = html;
+}
+
+
+</script>
+
+</head>
+<body>
+
+<h1>Ajax/Json Example: Stock Market (v0)</h1>
+
+<button onClick="makeAjaxQueryMarket()">
+Click here to view Stock Market Activity
+</button>
+
+<br /><br />
+
+<div id="display">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "queryLocation": "Wollongong",
+  "forecast": "Mostly Cloudy",
+  "temperature": {
+    "degree": "21",
+    "scale": "C"
+  },
+  "humidity": "66%",
+  "windSpeed": "18 km/h"
+}
